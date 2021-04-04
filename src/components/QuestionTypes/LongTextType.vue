@@ -64,7 +64,7 @@
       },
 
       onEnter() {
-        if (!this.isMobile) {
+        if (!this.isMobile || !this.$refs.input.val) {
           this._onEnter()
         }
       }
