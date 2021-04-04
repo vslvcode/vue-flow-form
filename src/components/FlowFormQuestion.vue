@@ -77,7 +77,7 @@
         <a 
           class="f-enter-desc"
           href="#"
-          v-if="question.type !== QuestionType.LongText || !isMobile"
+          v-if="!isMobile"
           v-on:click.prevent="onEnter"
           v-html="language.formatString(language.pressEnter)">
         </a>
