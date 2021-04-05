@@ -3,6 +3,7 @@
     <textarea-autosize
       ref="input"
       rows="1"
+      v-bind:max-height="height"
       v-bind:value="value"
       v-bind:required="question.required"
       v-on:keydown.native="onKeyDown"
@@ -37,7 +38,8 @@
     },
     data () {
       return {
-        canReceiveFocus: true
+        canReceiveFocus: true,
+        height: this.getNewTextInputHeight()
       }
     },
     mounted() {
@@ -47,8 +49,14 @@
       window.removeEventListener('resize', this.onResizeListener)
     },
     methods: {
+      getNewTextInputHeight() {
+        // todo: temporary solution
+        return window.innerHeight**2 / 2200
+      },
+
       onResizeListener() {
         this.$refs.input.resize()
+        this.height = this.getNewTextInputHeight()
       },
 
       unsetFocus($event) {
@@ -71,3 +79,8 @@
     }
   }
 </script>
+<style>
+  ::-webkit-scrollbar {
+      display: none;
+  }
+</style>
