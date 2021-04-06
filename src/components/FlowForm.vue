@@ -9,6 +9,7 @@
           v-for="(q, index) in questionList"
           v-bind:question="q"
           v-bind:language="language"
+          v-bind:legal="legal"
           v-bind:key="'q' + index"
           v-bind:active="q.index === activeQuestionIndex"
           v-model="q.answer"
@@ -117,6 +118,10 @@
         <div v-if="timer" class="f-timer">
           <span>{{ formatTime(time) }}</span>
         </div>
+        <div class="f-legal" v-if="legal.show">
+          <div>{{ legal.disclaimer }}</div>
+          <div v-html="legal.privacyHTML"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -132,6 +137,7 @@
   import FlowFormQuestion from './FlowFormQuestion.vue'
   import QuestionModel, { ChoiceOption, LinkOption, QuestionType } from '../models/QuestionModel'
   import LanguageModel from '../models/LanguageModel'
+  import LegalInformation from '../models/LegalInformation'
   import { IsMobile } from '../mixins/IsMobile'
 
   export default {
@@ -148,6 +154,10 @@
       language: {
         type: LanguageModel,
         default: () => new LanguageModel()
+      },
+      legal: {
+        type: LegalInformation,
+        default: () => new LegalInformation()
       },
       progressbar: {
         type: Boolean, 

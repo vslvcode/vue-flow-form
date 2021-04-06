@@ -176,6 +176,10 @@ header.vff-header + .vff.vff-not-standalone{
   display: none;
 }
 
+.vff .q-form {
+  padding-bottom: 1%;
+}
+
 .vff .f-full-width {
   display: block;
   width: 100%;
@@ -707,6 +711,11 @@ header.vff-header svg.f-logo {
 .vff-footer .f-nav,
 .vff-footer .f-timer {
   display: inline-block;
+}
+
+.f-legal {
+  text-align: center;
+  font-size: 11px;
 }
 
 .vff-footer .f-timer {

@@ -3,6 +3,7 @@ import FlowForm from './components/FlowForm.vue'
 import Question from './components/Question.vue'
 import QuestionModel, { QuestionType, ChoiceOption, LinkOption, MaskPresets } from './models/QuestionModel'
 import LanguageModel from './models/LanguageModel'
+import LegalInformation from './models/LegalInformation'
 
 // IE11 Object.assign polyfill
 import 'es6-object-assign/auto'
@@ -40,5 +41,6 @@ export {
   ChoiceOption,
   LinkOption,
   LanguageModel,
+  LegalInformation,
   MaskPresets
 }
