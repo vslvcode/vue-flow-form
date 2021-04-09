@@ -4,6 +4,7 @@
       ref="input"
       rows="1"
       v-bind:max-height="height"
+      v-bind:maxlength="20000"
       v-bind:value="value"
       v-bind:required="question.required"
       v-on:keydown.native="onKeyDown"
