@@ -703,17 +703,35 @@ header.vff-header svg.f-logo {
 }
 
 .vff-footer .footer-inner-wrap {
-  text-align: right;
-  padding: 11px 20px 12px;
+  padding: 5px 10px 5px;
+  text-align: center;
 }
 
 .vff-footer .f-progress,
 .vff-footer .f-nav,
-.vff-footer .f-timer {
+.vff-footer .f-timer,
+.vff-footer .progress,
+.vff-footer .f-legal {
   display: inline-block;
 }
 
-.f-legal {
+.vff-footer .progress,
+.vff-footer .f-legal {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.vff-footer .progress {
+  padding-bottom: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .vff-footer .progress {
+    background-color: inherit;
+  }
+}
+
+.vff-footer .f-legal {
   text-align: center;
   font-size: 11px;
 }
