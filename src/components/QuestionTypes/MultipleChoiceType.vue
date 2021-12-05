@@ -148,7 +148,7 @@
           for (let i = 0; i < this.question.options.length; i++) {
             let o = this.question.options[i]
 
-            if (o.selected) {
+            if (o.selected && o !== option) {
               this._toggleAnswer(o)
             }
           }
