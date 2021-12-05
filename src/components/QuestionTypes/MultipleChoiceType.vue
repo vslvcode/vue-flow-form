@@ -35,6 +35,7 @@
             v-on:blur="stopEditOther"
             v-on:keyup.enter.prevent="stopEditOther"
             v-on:keyup="onChangeOther"
+            v-on:paste="onPaste"
             v-on:change="onChangeOther"
             maxlength="256"
           />

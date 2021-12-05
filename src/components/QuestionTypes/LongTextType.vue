@@ -9,6 +9,7 @@
       v-bind:required="question.required"
       v-on:keydown.native="onKeyDown"
       v-on:keyup.native="onChange"
+      v-on:paste.native="onPaste"
       v-on:keydown.enter.exact.native="onEnterDown"
       v-on:keyup.enter.exact.prevent.native="onEnter"
       v-on:keyup.tab.prevent.native="onEnter"

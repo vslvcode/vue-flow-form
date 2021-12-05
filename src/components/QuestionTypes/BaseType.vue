@@ -103,6 +103,10 @@
         }
       },
 
+      onPaste($event) {
+        setTimeout(() => {this.onChange($event)}, 0)
+      },
+
       onChange($event) {
         this.dirty = true
         this.dataValue = $event.target.value
