@@ -156,6 +156,9 @@
       this.dataValue = this.question.answer
 
       this.$refs.qanimate.addEventListener('animationend', this.onAnimationEnd)
+      if (this.question.index === 0) {
+        this.$parent.$emit('on-open-question', this.question.index)
+      }
     },
     beforeDestroy() {
       this.$refs.qanimate.removeEventListener('animationend', this.onAnimationEnd)
@@ -213,6 +216,12 @@
         if (q) {
           if (!q.focused) {
             this.$emit('answer', q)
+            if (q.isValid()) {
+              this.$parent.$emit('on-close-question', this.question.index)
+              if (this.question.index !== this.$parent.questionListActivePath.length - 1) {
+                this.$parent.$emit('on-open-question', (this.question.index + 1))
+              }
+            }
           }
 
           q.onEnter()

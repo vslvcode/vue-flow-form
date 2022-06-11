@@ -641,6 +641,9 @@
             this.startTimer()
           }
 
+          this.$emit('on-close-question', this.activeQuestionIndex)
+          this.$emit('on-open-question', this.activeQuestionIndex - 1)
+
           --this.activeQuestionIndex
 
           this.reverse = true
